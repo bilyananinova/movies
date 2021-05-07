@@ -1,0 +1,40 @@
+
+.navigation {
+    display: flex;
+    background:  rgb(37, 176, 243);
+}
+
+.navigation ul {
+    margin-right: auto;
+    display: flex;
+    list-style: none;
+}
+
+.navigation li {
+    display: flex;
+    color: #ffffff;
+}
+
+.navigation a, .home a {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding: 0 1em;
+}
+
+.home::before {
+    display: inline-block;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+    content: '\f008';
+}
+
+.navigation a:hover,
+.home a:hover {
+    text-shadow: 0px 0px 5px #000000;
+    cursor: pointer;
+}
+
+.welcome-msg {
+    align-items: center;
+}

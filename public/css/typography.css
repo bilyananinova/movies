@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+
+html {
+    font: 16px/1.5 'Noto Sans JP', sans-serif;
+}
+
+body, table, form, select, option, input, textarea {
+    font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    /* margin-bottom: 0.5em; */
+    font-weight: normal;
+}
+
+h1 { font-size: 2.6em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1em; }
+
+p, ul, ol {
+    /* padding: 1.5em; */
+}
+
+ul, ol {
+    /* padding-left: 2em; */
+}
+
+ul ul, ol ul, ul ol, ol ol {
+    /* padding-top: 0.5em;
+    padding-bottom: 0.5em; */
+}
+
+ol > li > ol > li {
+    list-style-type: lower-roman;
+}
+
+blockquote {
+    padding: 1rem;
+}
+
+blockquote .author {
+    font-style: italic;
+    text-align: right;
+    opacity: 0.5;
+}
+
+blockquote .author:before {
+    display: inline-block;
+    content: '\2014';
+    padding-right: 0.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* for current project  */
+
+h3 {
+    text-align: center;
+    font-weight: 300;
+}
+
+h6 {
+    text-align: center;
+}
+
+.container {
+    width: 80em;
+    margin: 0 auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-main {
+    display: flex;
+    flex-direction: column;
+}
