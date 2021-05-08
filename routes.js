@@ -3,11 +3,11 @@ let express = require('express');
 let router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('home', {layout: false});
+    res.render('home');
 });
 
 router.get('/all-movies', (req, res) => {
-    res.render('catalog', {layout: false});
+    res.render('catalog');
 });
 
 module.exports = router;
