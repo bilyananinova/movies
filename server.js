@@ -1,7 +1,8 @@
 let express = require('express');
 let handlebars = require('express-handlebars');
-let config = require('./config/config');
 
+let config = require('./config/config');
+let router = require('./routes');
 
 let app = express();
 
@@ -11,12 +12,8 @@ app.engine('hbs', handlebars({
 }));
 app.set('view engine', 'hbs');
 
-//static
-app.use('/static', express.static('public'))
+//moddlewares
+app.use('/static', express.static('public'));
+app.use(router);
 
-
-app.get('/', (req, res) => {
-    res.render('home', {layout: false});
-});
-
-app.listen(config.PORT, () => console.log( `Server runs on port ${config.PORT}...`))
+app.listen(config.PORT, () => console.log( `Server runs on port ${config.PORT}...`));
