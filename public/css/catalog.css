@@ -2,13 +2,15 @@
 .movie-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .movie-list li {
     list-style: none;
     position: relative;
     margin-top: 2em;
+    padding: 0 0.5em;
 }
 
 .movie-list a {

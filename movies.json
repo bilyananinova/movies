@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Promising Young Woman ",
+        "description": "A young woman, traumatized by a tragic event in her past, seeks out vengeance against those who crossed her path.",
+        "img": "https://m.media-amazon.com/images/M/MV5BOTI0OGQzOWEtZWY1ZC00MTFjLThmODAtYWQ3MDk4ZGEyNGYyXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg",
+        "id": "6w24qdj0kog59fk1"
+    },
+    {
+        "title": "Venom",
+        "description": "A failed reporter is bonded to an alien entity, one of many symbiotes who have invaded Earth. But the being takes a liking to Earth and decides to protect it. ",
+        "img": "https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_.jpg",
+        "id": "6w24qamckog5aze4"
+    },
+    {
+        "title": "Black Panther",
+        "description": "T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past. ",
+        "img": "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpg",
+        "id": "6w24q6k0kog5c79x"
+    },
+    {
+        "title": "Hidden Figures",
+        "description": "The story of a team of female African-American mathematicians who served a vital role in NASA during the early years of the U.S. space program. ",
+        "img": "https://m.media-amazon.com/images/M/MV5BMzg2Mzg4YmUtNDdkNy00NWY1LWE3NmEtZWMwNGNlMzE5YzU3XkEyXkFqcGdeQXVyMjA5MTIzMjQ@._V1_.jpg",
+        "id": "6w24q684kog5d6jx"
+    },
+    {
+        "title": "IT",
+        "description": "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town. ",
+        "img": "https://static.posters.cz/image/750/posters/it-pennywise-hush-i58004.jpg",
+        "id": "6w24q2p8kog5e7es"
+    },
+    {
+        "title": "Pet Sematary",
+        "description": "Dr. Louis Creed and his wife, Rachel, relocate from Boston to rural Maine with their two young children. The couple soon discover a mysterious burial ground hidden deep in the woods near their new home. ",
+        "img": "https://m.media-amazon.com/images/M/MV5BMjJiN2UwYWItNWJjNi00Zjg4LWE5NmItMmM4N2I3ZjY3OTY2XkEyXkFqcGdeQXVyODQxMTI4MjM@._V1_.jpg",
+        "id": "6w24qb1gkog5ezio"
+    },
+    {
+        "title": "Black Widow",
+        "description": "A film about Natasha Romanoff in her quests between the films Civil War and Infinity War.",
+        "img": "https://cdna.artstation.com/p/assets/images/images/023/920/890/medium/spider-web-artworks-blackwidow-poster1-2.jpg?1580763862",
+        "id": "6w24q6fckog5jv9a"
+    }
+]

@@ -1,55 +1,9 @@
+{{#if moviesList}}
 <ul class="movie-list">
-    <li>
-        <a href="/details">
-            <div class="movieCard">
-                <img
-                    src="https://m.media-amazon.com/images/M/MV5BOTI0OGQzOWEtZWY1ZC00MTFjLThmODAtYWQ3MDk4ZGEyNGYyXkEyXkFqcGdeQXVyODc0OTEyNDU@._V1_.jpg">
-            </div>
-            <p class="title">Promising Young Woman</p>
-        </a>
-    </li>
-    <li>
-        <a href="/details">
-            <div class="movieCard">
-                <img
-                    src="https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_.jpg">
-            </div>
-            <p class="title">Venom</p>
-        </a>
-    </li>
-    <li>
-        <a href="/details">
-            <div class="movieCard">
-                <img
-                    src="https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpg">
-            </div>
-            <p class="title">Black Panther</p>
-        </a>
-    </li>
-    <li>
-        <a href="/details">
-            <div class="movieCard">
-                <img
-                    src="https://m.media-amazon.com/images/M/MV5BMzg2Mzg4YmUtNDdkNy00NWY1LWE3NmEtZWMwNGNlMzE5YzU3XkEyXkFqcGdeQXVyMjA5MTIzMjQ@._V1_.jpg">
-            </div>
-            <p class="title">Hidden Figures</p>
-        </a>
-    </li>
-    <li>
-        <a href="/details">
-            <div class="movieCard">
-                <img src="https://static.posters.cz/image/750/posters/it-pennywise-hush-i58004.jpg">
-            </div>
-            <p class="title">IT</p>
-        </a>
-    </li>
-    <li>
-        <a href="/details">
-            <div class="movieCard">
-                <img
-                    src="https://m.media-amazon.com/images/M/MV5BMjJiN2UwYWItNWJjNi00Zjg4LWE5NmItMmM4N2I3ZjY3OTY2XkEyXkFqcGdeQXVyODQxMTI4MjM@._V1_.jpg">
-            </div>
-            <p class="title">Pet Sematary</p>
-        </a>
-    </li>
+    {{#each moviesList}}
+    {{> movie}}
+    {{/each}}
 </ul>
+{{else}}
+<p>No movies ...</p>
+{{/if}}
