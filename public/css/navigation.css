@@ -5,7 +5,7 @@
 }
 
 .navigation ul {
-    margin-right: auto;
+    margin: auto;
     display: flex;
     list-style: none;
 }

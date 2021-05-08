@@ -28,7 +28,7 @@ router.post('/create', (req, res) => {
     let movie = new Movie(req.body.movieName, req.body.movieDescription, req.body.movieImg);
 
     moviesList.push(movie);
-    
+
     fs.writeFileSync(__dirname + '\\movies.json', JSON.stringify(moviesList), (err) => {
         if (err) {
             console.error(err.message);
@@ -39,5 +39,11 @@ router.post('/create', (req, res) => {
     res.redirect('/all-movies');
 
 });
+
+router.get('/details/:id', (req, res) => {
+    let movie = productServices.getById(req.params.id);
+
+    res.render('details', { movie });
+})
 
 module.exports = router;

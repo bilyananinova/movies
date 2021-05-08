@@ -1,0 +1,73 @@
+.details h3 {
+   margin: 1em 0;
+}
+
+.movieDetails {
+   display: flex;
+   margin: auto;
+   width: 70em;
+}
+
+.moviePoster {
+   position: relative;
+   overflow: hidden;
+   width: 35em;
+}
+
+.moviePoster::before {
+   display: block;
+   padding-top: 150%;
+   content: '';
+}
+
+.moviePoster img {
+   position: absolute;
+   width: 100%;
+   height: auto;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.movieInfo {
+   padding-left: 2em;
+}
+
+.movieInfo p {
+   padding-bottom: 1em;
+}
+
+.movieInfo a {
+   margin-right: 1em;
+}
+
+.editBtn{
+   color: #000000;
+   border-radius: 0.5em;
+   background: rgb(255, 255, 0);
+   padding: 0.3em 0.8em;
+
+}
+
+.delBtn {
+   color: #000000;
+   border-radius: 0.5em;
+   background: rgb(255, 0, 0);
+   padding: 0.3em 0.8em;
+}
+
+.editBtn::before ,
+.delBtn::before {
+   display: inline-block;
+   font-family: 'Font Awesome 5 Free';
+   font-weight: 900;
+   padding-right: 0.5em;
+}
+
+.editBtn::before {
+   content: '\f044';
+}
+
+.delBtn::before {
+   content: '\f2ed';
+}
