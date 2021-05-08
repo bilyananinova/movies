@@ -1,0 +1,54 @@
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie-list li {
+    list-style: none;
+    position: relative;
+    margin-top: 2em;
+}
+
+.movie-list a {
+    color: #000000;
+}
+
+.movieCard {
+    width: 15em;
+    position: relative;
+    overflow: hidden;
+}
+
+.movieCard::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 100;
+}
+
+.movieCard::after {
+    content: '';
+    display: block;
+    padding-top: 147.77%;
+}
+
+.movieCard:hover::before {
+    background: rgba(0,0,0,0.1);
+}
+
+.movieCard img {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: auto;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); 
+}
