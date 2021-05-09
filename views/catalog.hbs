@@ -1,3 +1,10 @@
+<div class="search-box">
+    <form action="/all-movies" method="GET">
+    <input type="search" class="search" name="search" placeholder="Search...">
+    <input type="submit" value="&#xf002;">
+  </form>
+</div>
+
 {{#if moviesList}}
 <ul class="movie-list">
     {{#each moviesList}}

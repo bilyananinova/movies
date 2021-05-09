@@ -17,6 +17,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/all-movies', (req, res) => {
+    if(req.query.search != undefined) {
+        moviesList = productServices.getAllSearch(req.query.search);
+    }
+
     res.render('catalog', { moviesList });
 });
 
@@ -34,7 +38,7 @@ router.post('/create', (req, res) => {
             console.error(err.message);
             return
         }
-    })
+    });
 
     res.redirect('/all-movies');
 

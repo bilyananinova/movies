@@ -13,28 +13,29 @@ label {
     padding: 0.5em;
 }
 
-input {
+.addMovie input[type="text"] {
     padding: 0.5em;
     border: 2px solid  rgb(194, 221, 235);
     width: 60em;
 }
 
-input:focus, 
-input:hover {
+.addMovie input[type="text"]:focus, 
+.addMovie input[type="text"]:hover {
     border: 2px solid  rgb(37, 176, 243);
 }
 
-input[type="submit"] {
-    margin: 2em;
+.addMovie input[type="submit"] {
+    margin-top: 2em;
     background:  rgb(37, 176, 243);
     border: none;
     cursor: pointer;
     color: #ffffff;
+    border: 2px solid  rgb(37, 176, 243);
     width: 15em;
 }
 
-input[type="submit"]:focus,
-input[type="submit"]:hover {
+.addMovie input[type="submit"]:focus,
+.addMovie input[type="submit"]:hover {
     color: #000000;
     background: #ffffff;
     border: 2px solid  rgb(37, 176, 243);

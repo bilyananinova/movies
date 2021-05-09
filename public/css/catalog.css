@@ -1,3 +1,38 @@
+.search-box {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.3em;
+}
+
+.search-box form {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-box input[type="search"] {
+    width: 15em;
+    padding: 0.3em;
+}
+
+.search-box input[type="submit"] {
+    margin-top: 0;
+    width: 4em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding: 0.3em;
+    background:  rgb(37, 176, 243);
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    border: 2px solid  rgb(37, 176, 243);
+}
+
+.search-box input[type="submit"]:focus,
+.search-box input[type="submit"]:hover {
+    border: 2px solid  rgb(37, 176, 243);
+    color: #000000;
+    background: #ffffff;
+}
 
 .movie-list {
     display: flex;

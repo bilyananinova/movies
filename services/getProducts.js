@@ -9,7 +9,13 @@ function getById(id) {
     return movie;
 }
 
+function getAllSearch(query) {
+    let movies = moviesList.filter(m => m.title.toLowerCase().includes(query.toLowerCase()));
+    return movies;
+}
+
 module.exports = {
     getAll,
-    getById
+    getById,
+    getAllSearch
 }
