@@ -1,4 +1,3 @@
-let moviesList = require('../movies.json');
 let Movie = require('../models/Movie');
 
 async function getAll() {
@@ -11,8 +10,8 @@ async function getById(id) {
     return movie;
 }
 
-function getAllSearch(query) {
-    let movies = moviesList.filter(m => m.title.toLowerCase().includes(query.toLowerCase()));
+async function getAllSearch(query) {
+    let movies = await Movie.find({ "name": { "$regex": query, "$options": "i" } }).lean();
     return movies;
 }
 

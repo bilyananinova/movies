@@ -15,11 +15,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/all-movies', async (req, res) => {
-    // if (req.query.search != undefined) {
-    //     moviesList = productServices.getAllSearch(req.query.search);
-    // }
-   
     let movies = await getProducts.getAll();
+
+    if (req.query.search != undefined) {
+        movies = await getProducts.getAllSearch(req.query.search);
+    }
+
     res.render('catalog', { movies });
 });
 
@@ -39,6 +40,6 @@ router.get('/details/:id', async (req, res) => {
 
 router.get('*', (req, res) => {
     res.status(404).render('404');
-})
+});
 
 module.exports = router;
