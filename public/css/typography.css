@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
 
-
 html {
     font: 16px/1.5 'Noto Sans JP', sans-serif;
 }
@@ -57,27 +56,4 @@ blockquote .author:before {
 
 a {
     text-decoration: none;
-}
-
-/* for current project  */
-
-h3 {
-    text-align: center;
-    font-weight: 300;
-}
-
-h6 {
-    text-align: center;
-}
-
-.container {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.site-main {
-    display: flex;
-    flex-direction: column;
 }

@@ -1,5 +1,7 @@
 .addMovie h3 {
     margin: 1em 0;
+    text-align: center;
+    font-weight: 300;
 }
 
 form {
