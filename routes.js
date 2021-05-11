@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/all-movies', (req, res) => {
-    if(req.query.search != undefined) {
+    if (req.query.search != undefined) {
         moviesList = productServices.getAllSearch(req.query.search);
     }
 
@@ -48,6 +48,10 @@ router.get('/details/:id', (req, res) => {
     let movie = productServices.getById(req.params.id);
 
     res.render('details', { movie });
+});
+
+router.get('*', (req, res) => {
+    res.status(404).render('404');
 })
 
 module.exports = router;

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+.site-main {
+    background-image: url('https://images.alphacoders.com/787/thumb-1920-787294.png');
+    background-position: left;
+    display: inline-block;
+    color: red;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.site-main {
+    font: 18px/1.5 'Nosifer', cursive;
+    padding: 15em;
+
+}
+
+.backBtn {
+    text-decoration: none;
+    color: black;
+    border: 1px solid red;
+    padding: 0.3em 1.2em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    background: red;
+}
