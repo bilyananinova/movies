@@ -1,14 +1,8 @@
-let id = require('uniqid');
+let Movie = require('../models/Movie');
 
-class Movie {
-    constructor(title, description, img) {
-        this.title = title,
-        this.description = description,
-        this.img = img
-        this.id = id()
-    }
+function create(data) {
+    let movie = new Movie({...data });
+    return movie.save();
 }
 
-module.exports = {
-    Movie
-}
+module.exports = create;

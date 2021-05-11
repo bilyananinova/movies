@@ -1,11 +1,13 @@
 let moviesList = require('../movies.json');
+let Movie = require('../models/Movie');
 
-function getAll() {
-    return moviesList
+async function getAll() {
+    let movies = await Movie.find().lean();
+    return movies;
 }
 
-function getById(id) {
-    let movie = moviesList.find(m => m.id == id);
+async function getById(id) {
+    let movie = await Movie.findById(id).lean();
     return movie;
 }
 
