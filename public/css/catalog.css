@@ -12,6 +12,8 @@
 .search-box input[type="search"] {
     width: 15em;
     padding: 0.3em;
+    border: none;
+    border: 1px solid  rgb(109, 104, 104);
 }
 
 .search-box input[type="submit"] {
@@ -20,16 +22,17 @@
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     padding: 0.3em;
-    background:  rgb(37, 176, 243);
+    background:  rgb(255, 0, 0);
     border: none;
     cursor: pointer;
     color: #ffffff;
-    border: 2px solid  rgb(37, 176, 243);
+    border: 1px solid  rgb(247, 0, 0);
 }
 
+.search-box input[type="search"]:focus,
 .search-box input[type="submit"]:focus,
 .search-box input[type="submit"]:hover {
-    border: 2px solid  rgb(37, 176, 243);
+    border-color: rgb(255, 0, 0);
     color: #000000;
     background: #ffffff;
 }

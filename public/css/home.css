@@ -1,8 +1,13 @@
 
 .banner {
+    display: block;
     width: auto;
-    position: relative;
+    position: absolute;
     overflow: hidden;
+    top: 60px;
+    left: 0;
+    bottom: 50px;
+    right: 0;
 }
 
 .banner::after {
@@ -19,4 +24,5 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
+    z-index: -1;
  }
