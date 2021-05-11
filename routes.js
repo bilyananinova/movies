@@ -3,6 +3,7 @@ let bodyParser = require('body-parser');
 
 let getProducts = require('./services/getProducts');
 let create = require('./services/createProduct');
+let update = require('./services/updateProduct');
 
 let router = express.Router();
 
@@ -36,6 +37,16 @@ router.post('/create', async (req, res) => {
 router.get('/details/:id', async (req, res) => {
     let movie = await getProducts.getById(req.params.id);
     res.render('details', { movie });
+});
+
+router.get('/edit/:id', async (req, res) => {
+    let movie = await getProducts.getById(req.params.id);
+    res.render('edit', { movie });
+});
+
+router.post('/edit/:id', async (req, res) => {
+    await update(req.params.id, req.body);
+    res.redirect(`/details/${req.params.id}`);
 });
 
 router.get('*', (req, res) => {

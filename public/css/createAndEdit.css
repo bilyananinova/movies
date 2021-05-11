@@ -1,3 +1,4 @@
+.editMovie h3,
 .addMovie h3 {
     margin: 1em 0;
     text-align: center;
@@ -15,22 +16,27 @@ label {
     padding: 0.5em;
 }
 
+.editMovie input[type="text"],
 .addMovie input[type="text"] {
     padding: 0.5em;
     border: 2px solid  rgb(194, 221, 235);
     width: 60em;
 }
 
+.editMovie input[type="text"]:focus,
+.editMovie input[type="text"]:hover,
 .addMovie input[type="text"]:focus, 
 .addMovie input[type="text"]:hover {
     border: 2px solid #ff0000;;
 }
 
+.editMovie input[type="submit"],
 .addMovie input[type="submit"] {
     width: 10em;
     margin: 1em;
     border: none;
     border-radius: 0.5em;
+    padding: 0.5em 1.2em;
     border:  2px solid rgb(0, 0, 0);
     background:  rgb(0, 0, 0);
     color: #ff0000;
@@ -38,6 +44,8 @@ label {
     font-family: 'Oswald', sans-serif;
 }
 
+.editMovie input[type="submit"]:focus,
+.editMovie input[type="submit"]:hover,
 .addMovie input[type="submit"]:focus,
 .addMovie input[type="submit"]:hover {
     cursor: pointer;

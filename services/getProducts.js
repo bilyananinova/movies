@@ -15,8 +15,14 @@ async function getAllSearch(query) {
     return movies;
 }
 
+async function getByIdAndUpdate(query) {
+    let movie = await Movie.findByIdAndUpdate().lean();
+    return movie;
+}
+
 module.exports = {
     getAll,
     getById,
-    getAllSearch
+    getAllSearch,
+    getByIdAndUpdate
 }
