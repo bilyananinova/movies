@@ -4,6 +4,7 @@ let bodyParser = require('body-parser');
 let getProducts = require('./services/getProducts');
 let create = require('./services/createProduct');
 let update = require('./services/updateProduct');
+let deleteMovie = require('./services/deleteProduct');
 
 let router = express.Router();
 
@@ -47,6 +48,11 @@ router.get('/edit/:id', async (req, res) => {
 router.post('/edit/:id', async (req, res) => {
     await update(req.params.id, req.body);
     res.redirect(`/details/${req.params.id}`);
+});
+
+router.get('/delete/:id', async (req, res) => {
+    await deleteMovie(req.params.id);
+    res.redirect(`/all-movies`);
 });
 
 router.get('*', (req, res) => {
