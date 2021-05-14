@@ -1,10 +1,12 @@
 
 let config = {
    'development': {
-        PORT: 5000
+        PORT: 5000,
+        SALT_ROUNDS: 10,
     },
     'production': {
-        PORT: 80
+        PORT: 80,
+        SALT_ROUNDS: 10,
     }
 }
 

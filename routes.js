@@ -5,6 +5,7 @@ let getProducts = require('./services/getProducts');
 let create = require('./services/createProduct');
 let update = require('./services/updateProduct');
 let deleteMovie = require('./services/deleteProduct');
+let register = require('./services/registerUser');
 
 let router = express.Router();
 
@@ -54,6 +55,21 @@ router.get('/delete/:id', async (req, res) => {
     await deleteMovie(req.params.id);
     res.redirect(`/all-movies`);
 });
+
+router.get('/register', (req, res) => {
+    res.render('register')
+});
+
+router.post('/register', async (req, res) => {
+
+    try {
+        await register(req.body);
+
+        res.redirect('/all-movies');
+    } catch (err) {
+        return res.render('register');
+    }
+})
 
 router.get('*', (req, res) => {
     res.status(404).render('404');
