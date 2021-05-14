@@ -1,7 +1,8 @@
 let User = require('../models/User');
 let bcrypt = require('bcrypt');
+let jwt = require('jsonwebtoken');
 
-let { SALT_ROUNDS } = require('../config/config');
+let { SALT_ROUNDS, SECRET } = require('../config/config');
 
 async function register(data) {
 
@@ -24,8 +25,10 @@ async function register(data) {
     let hash = await bcrypt.hash(password, SALT_ROUNDS);
 
     let user = new User({ username, password: hash });
+    user.save();
 
-    return user.save();
+    let token = await jwt.sign({ id: user._id }, SECRET);
+    return token;
 }
 
 module.exports = register;

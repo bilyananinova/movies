@@ -1,3 +1,4 @@
+.loginForm h3,
 .registerForm h3,
 .editMovie h3,
 .addMovie h3 {
@@ -17,15 +18,18 @@ label {
     padding: 0.5em;
 }
 
+.loginForm input[type="password"],
 .registerForm input[type="password"] {
     font-family: caption;
 }
 
-.registerForm input[type="password"]::placeholder{
+.loginForm input[type="password"]::placeholder,
+.registerForm input[type="password"]::placeholder {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-
+.loginForm input[type="text"],
+.loginForm input[type="password"],
 .registerForm input[type="text"],
 .registerForm input[type="password"],
 .editMovie input[type="text"],
@@ -35,11 +39,15 @@ label {
     width: 60em;
 }
 
+.loginForm input[type="text"],
+.loginForm input[type="password"],
 .registerForm input[type="text"],
 .registerForm input[type="password"] {
     width: 20em;
 }
 
+.loginForm input[type="text"]:focus,
+.loginForm input[type="text"]:hover,
 .registerForm input[type="text"]:focus,
 .registerForm input[type="text"]:hover,
 .editMovie input[type="text"]:focus,
@@ -49,6 +57,7 @@ label {
     border: 2px solid #ff0000;;
 }
 
+.loginForm input[type="submit"],
 .registerForm input[type="submit"],
 .editMovie input[type="submit"],
 .addMovie input[type="submit"] {
@@ -64,6 +73,8 @@ label {
     font-family: 'Oswald', sans-serif;
 }
 
+.loginForm input[type="submit"]:focus,
+.loginForm input[type="submit"]:hover,
 .registerForm input[type="submit"]:focus,
 .registerForm input[type="submit"]:hover,
 .editMovie input[type="submit"]:focus,

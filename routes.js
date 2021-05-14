@@ -6,8 +6,11 @@ let create = require('./services/createProduct');
 let update = require('./services/updateProduct');
 let deleteMovie = require('./services/deleteProduct');
 let register = require('./services/registerUser');
+let login = require('./services/loginUser');
 
 let router = express.Router();
+
+let { COOKIE_NAME } = require('./config/config');
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -57,19 +60,35 @@ router.get('/delete/:id', async (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-    res.render('register')
+    res.render('register');
 });
 
 router.post('/register', async (req, res) => {
-
     try {
-        await register(req.body);
+        let token = await register(req.body);
+        res.cookie(COOKIE_NAME, token);
 
         res.redirect('/all-movies');
     } catch (err) {
         return res.render('register');
     }
-})
+});
+
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
+router.post('/login', async (req, res) => {
+    try {
+        let token = await login(req.body);
+        res.cookie(COOKIE_NAME, token);
+
+        res.redirect('/all-movies');
+    } catch (err) {
+        return res.render('login');
+    }
+
+});
 
 router.get('*', (req, res) => {
     res.status(404).render('404');
