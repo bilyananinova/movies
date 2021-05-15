@@ -5,7 +5,7 @@
 }
 
 .navigation ul {
-    margin: 0 auto;
+    margin-left: auto;
     display: flex;
     list-style: none;
 }
@@ -15,7 +15,9 @@
     color: #ff0000;
 }
 
-.navigation a, .home a {
+.welcome-msg,
+.navigation a,
+.home a {
     display: flex;
     align-items: center;
     color: #ff0000;

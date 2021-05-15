@@ -28,6 +28,7 @@ label {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+textarea,
 .loginForm input[type="text"],
 .loginForm input[type="password"],
 .registerForm input[type="text"],
@@ -46,6 +47,8 @@ label {
     width: 20em;
 }
 
+textarea:focus,
+textarea:hover,
 .loginForm input[type="text"]:focus,
 .loginForm input[type="text"]:hover,
 .registerForm input[type="text"]:focus,
