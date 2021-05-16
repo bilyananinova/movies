@@ -10,10 +10,16 @@
     flex-direction: column;
 }
 
+.site-main h3 {
+    margin: 1em 0;
+    text-align: center;
+    font-weight: 300;
+}
+
 .site-footer {
     text-align: center;
     padding: 0.8em;
     margin-top: auto;
-    background:  rgb(0, 0, 0);
-    color: #ff0000;
+    background:  var(--footer-background);
+    color: var(--footer-font-color);
 }

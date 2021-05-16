@@ -1,12 +1,3 @@
-.loginForm h3,
-.registerForm h3,
-.editMovie h3,
-.addMovie h3 {
-    margin: 1em 0;
-    text-align: center;
-    font-weight: 300;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -18,74 +9,52 @@ label {
     padding: 0.5em;
 }
 
-.loginForm input[type="password"],
-.registerForm input[type="password"] {
+input[type="password"] {
     font-family: caption;
 }
 
-.loginForm input[type="password"]::placeholder,
-.registerForm input[type="password"]::placeholder {
-    font-family: 'Noto Sans JP', sans-serif;
+input[type="password"]::placeholder {
+    font-family: var(--main-font-family);
 }
 
 textarea,
-.loginForm input[type="text"],
-.loginForm input[type="password"],
-.registerForm input[type="text"],
-.registerForm input[type="password"],
-.editMovie input[type="text"],
-.addMovie input[type="text"] {
+input[type="text"],
+input[type="password"] {
     padding: 0.5em;
-    border: 2px solid  rgb(194, 221, 235);
-    width: 60em;
+    border: 2px solid  var(--input-border-color);
+    width: 20em;
 }
 
-.loginForm input[type="text"],
-.loginForm input[type="password"],
-.registerForm input[type="text"],
-.registerForm input[type="password"] {
-    width: 20em;
+textarea,
+.addMovie input[type="text"] {
+    width: 60em;
 }
 
 textarea:focus,
 textarea:hover,
-.loginForm input[type="text"]:focus,
-.loginForm input[type="text"]:hover,
-.registerForm input[type="text"]:focus,
-.registerForm input[type="text"]:hover,
-.editMovie input[type="text"]:focus,
-.editMovie input[type="text"]:hover,
-.addMovie input[type="text"]:focus, 
-.addMovie input[type="text"]:hover {
-    border: 2px solid #ff0000;;
+input[type="password"]:focus,
+input[type="password"]:hover,
+input[type="text"]:focus, 
+input[type="text"]:hover {
+    border-color: var(--input-border-color-hover);
 }
 
-.loginForm input[type="submit"],
-.registerForm input[type="submit"],
-.editMovie input[type="submit"],
-.addMovie input[type="submit"] {
+input[type="submit"] {
     width: 10em;
     margin: 1em;
     border: none;
     border-radius: 0.5em;
     padding: 0.5em 1.2em;
-    border:  2px solid rgb(0, 0, 0);
-    background:  rgb(0, 0, 0);
-    color: #ff0000;
-    cursor: pointer;
-    font-family: 'Oswald', sans-serif;
+    border:  2px solid var(--btn-border-color);
+    background:  var(--btn-background-color);
+    color: var(--btn-font-color);
+    font-family: var(--btn-font-family);
 }
 
-.loginForm input[type="submit"]:focus,
-.loginForm input[type="submit"]:hover,
-.registerForm input[type="submit"]:focus,
-.registerForm input[type="submit"]:hover,
-.editMovie input[type="submit"]:focus,
-.editMovie input[type="submit"]:hover,
-.addMovie input[type="submit"]:focus,
-.addMovie input[type="submit"]:hover {
+input[type="submit"]:focus,
+input[type="submit"]:hover {
     cursor: pointer;
-    background: red;
-    border-color: red;
-    color: #ffffff;
+    background: var(--btn-background-color-hover);
+    border-color: var(--btn-border-color-hover);
+    color: var(--btn-font-color-hover);
 }

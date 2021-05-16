@@ -1,0 +1,33 @@
+:root {
+    --main-font-family: 'Noto Sans JP', sans-serif;
+    --main-font-size: 16px;
+    --main-font-line-height: 1.5;
+    --main-font-color: #000000;
+
+    /* navigation */
+    --nav-background: #000000;
+
+    /* footer */
+    --footer-background: #000000;
+    --footer-font-color: #ff0000;
+    
+    /* btns and navigation btns */
+    --btn-font-family: 'Oswald', sans-serif;
+    --btn-font-color: #ff0000;
+    --btn-border-color: #000000;
+    --btn-background-color: #000000;
+
+    /* btns and navigation btns hover and focus */
+    --btn-border-color-hover: #ff0000;
+    --btn-font-color-hover: #ffffff;
+    --btn-background-color-hover: #ff0000;
+
+    /* edit, delete btns */
+    --btn-edit-background: #f5f120;
+    --btn-delete-background: #ff0000;
+    --btn-details-font-color: #000000;
+
+    /* text inputs */
+    --input-border-color: #c2ddeb;
+    --input-border-color-hover: #ff0000;
+}

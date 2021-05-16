@@ -1,7 +1,10 @@
-
 .navigation {
     display: flex;
-    background:  rgb(0, 0, 0);
+    background: var(--nav-background);
+}
+
+.navigation h1 {
+    margin-bottom: 0;
 }
 
 .navigation ul {
@@ -12,7 +15,6 @@
 
 .navigation li {
     display: flex;
-    color: #ff0000;
 }
 
 .welcome-msg,
@@ -20,7 +22,7 @@
 .home a {
     display: flex;
     align-items: center;
-    color: #ff0000;
+    color: var(--btn-font-color);
     padding: 0 1em;
 }
 
@@ -36,6 +38,6 @@
 .home a:focus, 
 .home a:hover {
     cursor: pointer;
-    background: red;
-    color: #ffffff;
+    background: var(--btn-background-color-hover);
+    color: var(--btn-font-color-hover);
 }

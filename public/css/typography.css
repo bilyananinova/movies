@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
 html {
-    font: 16px/1.5 'Noto Sans JP', sans-serif;
+    font-size: var(--main-font-size);
+    font-family: var(--main-font-family);
+    line-height: var(--main-font-line-height);
 }
 
 body, table, form, select, option, input, textarea {
@@ -11,7 +13,7 @@ body, table, form, select, option, input, textarea {
 
 h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
-    /* margin-bottom: 0.5em; */
+    margin-bottom: 0.5em;
     font-weight: normal;
 }
 
@@ -21,19 +23,6 @@ h3 { font-size: 1.8em; }
 h4 { font-size: 1.4em; }
 h5 { font-size: 1.2em; }
 h6 { font-size: 1em; }
-
-p, ul, ol {
-    /* padding: 1.5em; */
-}
-
-ul, ol {
-    /* padding-left: 2em; */
-}
-
-ul ul, ol ul, ul ol, ol ol {
-    /* padding-top: 0.5em;
-    padding-bottom: 0.5em; */
-}
 
 ol > li > ol > li {
     list-style-type: lower-roman;
@@ -57,5 +46,6 @@ blockquote .author:before {
 
 a {
     text-decoration: none;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--btn-font-family);
+    color: var(--main-font-color);
 }
