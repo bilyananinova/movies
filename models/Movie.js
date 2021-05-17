@@ -13,7 +13,8 @@ let movieSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Image is required!'],
         validate: /^http?/
-    }
+    },
+    creatorId: String
 });
 
 module.exports = mongoose.model('Movie', movieSchema);

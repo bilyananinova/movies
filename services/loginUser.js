@@ -20,7 +20,7 @@ async function login(data) {
         throw new Error('Wrong username or password!');
     }
 
-    let token = await jwt.sign({ id: user._id, username }, SECRET);
+    let token = await jwt.sign({ id: user._id, username}, SECRET, {expiresIn: 60 * 60});
     return token;
 }
 

@@ -27,7 +27,7 @@ async function register(data) {
     let user = new User({ username, password: hash });
     user.save();
 
-    let token = await jwt.sign({ id: user._id, username}, SECRET);
+    let token = await jwt.sign({ id: user._id, username}, SECRET, {expiresIn: 60 * 60});
     return token;
 }
 

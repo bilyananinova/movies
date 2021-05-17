@@ -38,13 +38,14 @@ router.get('/create', authenticate, (req, res) => {
 });
 
 router.post('/create',authenticate, async (req, res) => {
-    await create(req.body);
+    await create(req.user.id, req.body);
     res.redirect('/all-movies');
 });
 
 router.get('/details/:id', authenticate, async (req, res) => {
     let movie = await getProducts.getById(req.params.id);
-    res.render('details', { movie });
+    let creator = req.user.id == movie.creatorId;
+    res.render('details', {creator, movie });
 });
 
 router.get('/edit/:id', authenticate, async (req, res) => {
