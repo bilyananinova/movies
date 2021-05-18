@@ -2,14 +2,14 @@
     <h3>Add Movie</h3>
 
     <form action="/create" method="POST">
-        <label for="movieName">Enter movie name:</label>
-        <input type="text" name="name" placeholder="Title...">
+        <label for="name">Enter movie name:</label>
+        <input type="text" name="name" id="name" placeholder="Title..." value="{{movie.name}}">
 
-        <label for="movieDescription">Enter movie description:</label>
-        <textarea type="text" name="description" placeholder="Description..."></textarea>
+        <label for="description">Enter movie description:</label>
+        <textarea name="description" id="description" placeholder="Description...">{{movie.description}}</textarea>
 
-        <label for="movieImg">Enter movie image URL:</label>
-        <input type="text" name="img" placeholder="Image...">
+        <label for="img">Enter movie image URL:</label>
+        <input type="text" name="img" id="img" placeholder="Image..." value="{{movie.img}}">
 
         <input type="submit" value="Add Movie!">
     </form>

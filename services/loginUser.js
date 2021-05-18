@@ -11,7 +11,12 @@ async function login(data) {
         throw new Error('All fields are require!');
     }
 
-    let user = await User.findOne({ username });
+    let user = await User.findOne({ username: username.toLowerCase() });
+
+    if (!user) {
+        throw new Error('Wrong username or password!');
+    }
+
     let hash = user.password;
 
     let match = await bcrypt.compare(password, hash);
@@ -20,7 +25,7 @@ async function login(data) {
         throw new Error('Wrong username or password!');
     }
 
-    let token = await jwt.sign({ id: user._id, username}, SECRET, {expiresIn: 60 * 60});
+    let token = await jwt.sign({ id: user._id, username }, SECRET);
     return token;
 }
 

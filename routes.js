@@ -11,9 +11,9 @@ let login = require('./services/loginUser');
 let guest = require('./middlewares/isGuest');
 let authenticate = require('./middlewares/isAuthenticate');
 
-let router = express.Router();
-
 let { COOKIE_NAME } = require('./config/config');
+
+let router = express.Router();
 
 router.use(bodyParser.urlencoded({
     extended: true
@@ -37,15 +37,20 @@ router.get('/create', authenticate, (req, res) => {
     res.render('create');
 });
 
-router.post('/create',authenticate, async (req, res) => {
-    await create(req.user.id, req.body);
-    res.redirect('/all-movies');
+router.post('/create', authenticate, async (req, res) => {
+
+    try {
+        await create(req.user.id, req.body);
+        res.redirect('/all-movies');
+    } catch (error) {
+        res.render('create', { error: error.message, movie: req.body });
+    }
 });
 
 router.get('/details/:id', authenticate, async (req, res) => {
     let movie = await getProducts.getById(req.params.id);
     let creator = req.user.id == movie.creatorId;
-    res.render('details', {creator, movie });
+    res.render('details', { creator, movie });
 });
 
 router.get('/edit/:id', authenticate, async (req, res) => {
@@ -53,9 +58,13 @@ router.get('/edit/:id', authenticate, async (req, res) => {
     res.render('edit', { movie });
 });
 
-router.post('/edit/:id', authenticate,async (req, res) => {
-    await update(req.params.id, req.body);
-    res.redirect(`/details/${req.params.id}`);
+router.post('/edit/:id', authenticate, async (req, res) => {
+    try {
+        await update(req.params.id, req.body);
+        res.redirect(`/details/${req.params.id}`);
+    } catch (error) {
+        res.render('edit', { error: error.message, movie: req.body });
+    }
 });
 
 router.get('/delete/:id', authenticate, async (req, res) => {
@@ -67,14 +76,15 @@ router.get('/register', guest, (req, res) => {
     res.render('register');
 });
 
-router.post('/register', guest,async (req, res) => {
+router.post('/register', guest, async (req, res) => {
+
     try {
         let token = await register(req.body);
         res.cookie(COOKIE_NAME, token);
 
         res.redirect('/all-movies');
-    } catch (err) {
-        return res.render('register');
+    } catch (error) {
+        res.render('register', { error: error.message, user: req.body });
     }
 });
 
@@ -82,14 +92,14 @@ router.get('/login', guest, (req, res) => {
     res.render('login');
 });
 
-router.post('/login',guest, async (req, res) => {
+router.post('/login', guest, async (req, res) => {
     try {
         let token = await login(req.body);
         res.cookie(COOKIE_NAME, token);
 
         res.redirect('/all-movies');
-    } catch (err) {
-        return res.render('login');
+    } catch (error) {
+        res.render('login', { error: error.message, user: req.body });
     }
 
 });

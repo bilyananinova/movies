@@ -1,13 +1,14 @@
 .movieDetails {
    display: flex;
    margin: auto;
-   width: 70em;
+   width: 60em;
 }
 
 .moviePoster {
+   display: flex;
    position: relative;
    overflow: hidden;
-   width: 35em;
+   flex:0 0 60%;
 }
 
 .moviePoster::before {
@@ -26,7 +27,8 @@
 }
 
 .movieInfo {
-   padding-left: 2em;
+   padding:  0 2em;
+   flex: 0 0 40%;
 }
 
 .movieInfo p {

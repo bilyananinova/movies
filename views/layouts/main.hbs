@@ -29,6 +29,14 @@
         </header>
 
         <main class="site-main">
+            {{#if error}}
+                <div class="notification">
+                    <div class="errorBox">
+                        <span>{{error}}</span>
+                    </div>
+                </div>
+            {{/if}}
+
             {{{body}}}
         </main>
 

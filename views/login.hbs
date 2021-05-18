@@ -3,9 +3,9 @@
 
     <form action="/login" method="POST">
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Username">
+        <input type="text" name="username" id="username" placeholder="Username" value="{{user.username}}">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="password" name="password" id="password" placeholder="Password" value="{{user.password}}">
         <input type="submit" value="Log in" />
     </form>
 </section>

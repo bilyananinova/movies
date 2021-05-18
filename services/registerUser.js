@@ -12,11 +12,19 @@ async function register(data) {
         throw new Error('All fields are required!');
     }
 
+    if (password.length < 5) {
+        throw new Error('Password must be at least 5 characters long!');
+    }
+
+    if (!/[A-Z]/.test(password)) {
+        throw new Error('Password must be at least 1 capital letter');
+    }
+    
     if (password !== repass) {
         throw new Error('Passwords don\'t match!');
     }
 
-    let existName = await User.find({ username: username });
+    let existName = await User.find({ username });
 
     if (existName.length > 0) {
         throw new Error('This username already exist!');
@@ -27,7 +35,7 @@ async function register(data) {
     let user = new User({ username, password: hash });
     user.save();
 
-    let token = await jwt.sign({ id: user._id, username}, SECRET, {expiresIn: 60 * 60});
+    let token = await jwt.sign({ id: user._id, username }, SECRET);
     return token;
 }
 

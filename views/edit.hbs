@@ -2,14 +2,14 @@
     <h3>Edit Movie</h3>
 
     <form method="POST">
-        <label for="movieName">Edit movie name:</label>
-        <input type="text" name="name" placeholder="Title..." value="{{movie.name}}">
+        <label for="name">Edit movie name:</label>
+        <input type="text" name="name" id="name" placeholder="Title..." value="{{movie.name}}">
 
-        <label for="movieDescription">Edit movie description:</label>
-        <textarea type="text" name="description" placeholder="Description..." value="{{movie.description}}"></textarea>
+        <label for="description">Edit movie description:</label>
+        <textarea name="description" id="description" placeholder="Description...">{{movie.description}}</textarea>
 
-        <label for="movieImg">Edit movie image URL:</label>
-        <input type="text" name="img" placeholder="Image..." value="{{movie.img}}">
+        <label for="img">Edit movie image URL:</label>
+        <input type="text" name="img" id="img" placeholder="Image..." value="{{movie.img}}">
 
         <input type="submit" value="Edit Movie!">
     </form>
