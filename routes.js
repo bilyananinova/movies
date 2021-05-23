@@ -5,11 +5,14 @@ let getProducts = require('./services/getProducts');
 let create = require('./services/createProduct');
 let update = require('./services/updateProduct');
 let deleteMovie = require('./services/deleteProduct');
+let like = require('./services/like');
 let register = require('./services/registerUser');
 let login = require('./services/loginUser');
 
 let guest = require('./middlewares/isGuest');
 let authenticate = require('./middlewares/isAuthenticate');
+
+let Movie = require('./models/Movie');
 
 let { COOKIE_NAME } = require('./config/config');
 
@@ -50,7 +53,13 @@ router.post('/create', authenticate, async (req, res) => {
 router.get('/details/:id', authenticate, async (req, res) => {
     let movie = await getProducts.getById(req.params.id);
     let creator = req.user.id == movie.creatorId;
-    res.render('details', { creator, movie });
+    let isLiked = await Movie.find({
+        likes: {
+            $elemMatch: { id: res.locals.user.id }
+        }
+    });
+
+    res.render('details', { creator, movie, isLiked});
 });
 
 router.get('/edit/:id', authenticate, async (req, res) => {
@@ -70,6 +79,15 @@ router.post('/edit/:id', authenticate, async (req, res) => {
 router.get('/delete/:id', authenticate, async (req, res) => {
     await deleteMovie(req.params.id);
     res.redirect(`/all-movies`);
+});
+
+router.get('/like/:id', authenticate, async (req, res) => {
+    try {
+        await like(req.params.id, res.locals.user.id);
+        res.redirect(`/details/${req.params.id}`);
+    } catch (error) {
+        res.render('details', { error: error.message, movie: req.body });
+    }
 });
 
 router.get('/register', guest, (req, res) => {

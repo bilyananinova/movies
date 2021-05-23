@@ -14,7 +14,15 @@ let movieSchema = new mongoose.Schema({
         required: [true, 'Image is required!'],
         validate: /^http?/
     },
-    creatorId: String
+    creatorId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
+    },
+    likes: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
+    }]
+
 });
 
 module.exports = mongoose.model('Movie', movieSchema);

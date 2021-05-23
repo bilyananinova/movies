@@ -22,9 +22,10 @@
     --btn-font-color-hover: #ffffff;
     --btn-background-color-hover: #ff0000;
 
-    /* edit, delete btns */
+    /* edit, delete, like btns */
     --btn-edit-background: #f5f120;
     --btn-delete-background: #ff0000;
+    --btn-like-background: #1eff00;
     --btn-details-font-color: #000000;
 
     /* text inputs */

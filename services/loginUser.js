@@ -11,7 +11,7 @@ async function login(data) {
         throw new Error('All fields are require!');
     }
 
-    let user = await User.findOne({ username: username.toLowerCase() });
+    let user = await User.findOne({ username});
 
     if (!user) {
         throw new Error('Wrong username or password!');
