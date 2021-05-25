@@ -1,0 +1,18 @@
+.my-page {
+    margin: 2em;
+}
+
+.my-page section {
+    margin-bottom: 1em;
+}
+
+.my-page ul {
+    padding: 1em 0;
+}
+
+.my-page h4 {
+    background-color: #eef2f5;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    padding: 0.5em 0.3em;
+    font-weight: 500;
+}

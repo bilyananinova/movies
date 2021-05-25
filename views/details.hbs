@@ -8,6 +8,7 @@
         </div>
         <div class="movieInfo">
             <p>{{movie.description}}</p>
+            <p>Likes: {{movie.likes.length}}</p>
 
             {{#if creator}}
             <a href="/edit/{{movie._id}}" class="editBtn">Edit</a>

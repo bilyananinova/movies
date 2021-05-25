@@ -54,7 +54,7 @@ router.get('/details/:id', authenticate, async (req, res) => {
     let movie = await getProducts.getById(req.params.id);
     let creator = req.user.id == movie.creatorId;
     let isLiked = await getProducts.isLiked(req.params.id, res.locals.user.id);
-    let comments = movie.comments.map(c => ({...c, date: moment(c.date).format("MMM Do YY")}));
+    let comments = movie.comments.map(c => ({ ...c, date: moment(c.date).format("MMM Do YY") }));
 
     res.render('details', { creator, movie, isLiked, comments });
 });
@@ -94,6 +94,12 @@ router.post('/comments/:id', async (req, res) => {
     } catch (err) {
         res.render('details', { err })
     }
+});
+
+router.get('/my-page', async (req, res) => {
+    let movies = await getProducts.getMyMovies(res.locals.user.id);
+    let likedMovies = await getProducts.getLikedMovies(res.locals.user.id);
+    res.render('my-page', { movies, likedMovies });
 });
 
 router.get('/register', guest, (req, res) => {

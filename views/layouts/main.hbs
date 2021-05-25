@@ -16,7 +16,7 @@
                 <h1><a class="home" href="/"></a></h1>
                 <ul>
                     {{#if auth}}
-                    <li class="welcome-msg">Welcome, {{user.username}}</li>
+                    <li class="welcome-msg"><a href="/my-page">Welcome, {{user.username}}</a></li>
                     <li><a href="/all-movies">All Movies</a></li>
                     <li><a href="/create">Add Movie</a></li>
                     <li><a href="/logout">Logout</a></li>

@@ -1,0 +1,29 @@
+<section class="my-page">
+
+    <section class="created-movies">
+        <h4>Your movies</h4>
+        {{#if movies}}
+        <ul class="movie-list">
+            {{#each movies}}
+            {{> movie}}
+            {{/each}}
+        </ul>
+        {{else}}
+        <h3>No movies ...</h3>
+        {{/if}}
+    </section>
+
+    <section class="liked-movies">
+        <h4>Movies which you like</h4>
+        {{#if likedMovies}}
+        <ul class="movie-list">
+            {{#each likedMovies}}
+            {{> movie}}
+            {{/each}}
+        </ul>
+        {{else}}
+        <h3>No movies ...</h3>
+        {{/if}}
+    </section>
+    
+</section>

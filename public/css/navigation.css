@@ -41,3 +41,11 @@
     background: var(--btn-background-color-hover);
     color: var(--btn-font-color-hover);
 }
+
+.welcome-msg a,
+.welcome-msg a:focus,
+.welcome-msg a:hover {
+    font-family: var(--main-font-family);
+    font-weight: none;
+    background: none;
+}
