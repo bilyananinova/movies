@@ -12,8 +12,6 @@ let login = require('./services/loginUser');
 let guest = require('./middlewares/isGuest');
 let authenticate = require('./middlewares/isAuthenticate');
 
-let Movie = require('./models/Movie');
-
 let { COOKIE_NAME } = require('./config/config');
 
 let router = express.Router();
@@ -53,11 +51,7 @@ router.post('/create', authenticate, async (req, res) => {
 router.get('/details/:id', authenticate, async (req, res) => {
     let movie = await getProducts.getById(req.params.id);
     let creator = req.user.id == movie.creatorId;
-    let isLiked = await Movie.find({
-        likes: {
-            $elemMatch: { id: res.locals.user.id }
-        }
-    });
+    let isLiked = await getProducts.isLiked(req.params.id, res.locals.user.id);
 
     res.render('details', { creator, movie, isLiked});
 });

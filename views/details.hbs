@@ -10,11 +10,14 @@
             <p>{{movie.description}}</p>
 
             {{#if creator}}
-            <a href="/edit/{{movie._id}}" class="editBtn">Edit</a>
-            <a href="/delete/{{movie._id}}" class="delBtn">Delete</a>
+                <a href="/edit/{{movie._id}}" class="editBtn">Edit</a>
+                <a href="/delete/{{movie._id}}" class="delBtn">Delete</a>
             {{else}}
-            <a href="/like/{{movie._id}}" class="likeBtn">Like</a>
+                {{#unless isLiked }}
+                    <a href="/like/{{movie._id}}" class="likeBtn">Like</a>
+                {{/unless}}
             {{/if}}
+            
         </div>
 
     </div>

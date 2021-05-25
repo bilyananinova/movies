@@ -15,8 +15,22 @@ async function getAllSearch(query) {
     return movies;
 }
 
+async function isLiked(id, user) {
+    let like = false;
+    let movie = await Movie.findOne({
+        _id: id,
+        likes: {_id: user}
+    }).lean();
+
+    if(movie) {
+        like = true;
+    }
+    return like;
+}
+
 module.exports = {
     getAll,
     getById,
-    getAllSearch
+    getAllSearch,
+    isLiked
 }
