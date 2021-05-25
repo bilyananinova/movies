@@ -1,5 +1,5 @@
 <section class="details">
-    <h3>Movie Title: {{movie.name}}</h3>
+    <h3>{{movie.name}}</h3>
 
     <div class="movieDetails">
 
@@ -10,16 +10,40 @@
             <p>{{movie.description}}</p>
 
             {{#if creator}}
-                <a href="/edit/{{movie._id}}" class="editBtn">Edit</a>
-                <a href="/delete/{{movie._id}}" class="delBtn">Delete</a>
+            <a href="/edit/{{movie._id}}" class="editBtn">Edit</a>
+            <a href="/delete/{{movie._id}}" class="delBtn">Delete</a>
             {{else}}
-                {{#unless isLiked }}
-                    <a href="/like/{{movie._id}}" class="likeBtn">Like</a>
-                {{/unless}}
+            {{#unless isLiked }}
+            <a href="/like/{{movie._id}}" class="likeBtn">Like</a>
+            {{/unless}}
             {{/if}}
-            
+
         </div>
 
     </div>
+
+    <section class="commentSection">
+        <h3>Comments</h3>
+        {{#if comments}}
+        {{#each comments}}
+        {{> comment}}
+        {{/each}}
+        {{else}}
+        <div class="comment">
+            <p>Not comments yet ... </p>
+        </div>
+        {{/if}}
+    </section>
+
+
+    {{#unless creator}}
+    <form class="commentForm" action="/comments/{{movie._id}}" method="POST">
+        <label for="author">From:</label>
+        <input type="text" name="author" id="author" value="{{user.username}}">
+        <label for="content">Comment:</label>
+        <textarea name="content" id="content" placeholder="Leave a comment..." cols="5" rows="2"></textarea>
+        <input type="submit" value="Create comment">
+    </form>
+    {{/unless}}
 
 </section>

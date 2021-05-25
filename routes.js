@@ -1,11 +1,13 @@
 let express = require('express');
 let bodyParser = require('body-parser');
+let moment = require('moment');
 
 let getProducts = require('./services/getProducts');
-let create = require('./services/createProduct');
+let create = require('./services/createProduct.js');
 let update = require('./services/updateProduct');
 let deleteMovie = require('./services/deleteProduct');
 let like = require('./services/like');
+let comment = require('./services/comment');
 let register = require('./services/registerUser');
 let login = require('./services/loginUser');
 
@@ -52,8 +54,9 @@ router.get('/details/:id', authenticate, async (req, res) => {
     let movie = await getProducts.getById(req.params.id);
     let creator = req.user.id == movie.creatorId;
     let isLiked = await getProducts.isLiked(req.params.id, res.locals.user.id);
+    let comments = movie.comments.map(c => ({...c, date: moment(c.date).format("MMM Do YY")}));
 
-    res.render('details', { creator, movie, isLiked});
+    res.render('details', { creator, movie, isLiked, comments });
 });
 
 router.get('/edit/:id', authenticate, async (req, res) => {
@@ -81,6 +84,15 @@ router.get('/like/:id', authenticate, async (req, res) => {
         res.redirect(`/details/${req.params.id}`);
     } catch (error) {
         res.render('details', { error: error.message, movie: req.body });
+    }
+});
+
+router.post('/comments/:id', async (req, res) => {
+    try {
+        await comment(req.body, req.params.id);
+        res.redirect(`/details/${req.params.id}`);
+    } catch (err) {
+        res.render('details', { err })
     }
 });
 

@@ -21,6 +21,14 @@ let movieSchema = new mongoose.Schema({
     likes: [{
         type: mongoose.Types.ObjectId,
         ref: 'User'
+    }],
+    comments: [{
+        author: String,
+        date: {
+            type: Date,
+            default: Date.now
+        },
+        content: String
     }]
 
 });

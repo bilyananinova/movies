@@ -8,7 +8,7 @@
    display: flex;
    position: relative;
    overflow: hidden;
-   flex:0 0 60%;
+   flex:0 0 50%;
 }
 
 .moviePoster::before {
@@ -28,7 +28,7 @@
 
 .movieInfo {
    padding:  0 2em;
-   flex: 0 0 40%;
+   flex: 0 0 50%;
 }
 
 .movieInfo p {
@@ -80,4 +80,30 @@
 
 .likeBtn::before {
    content: '\f164';
+}
+
+.commentSection {
+   width: 60em;
+   margin: 2em auto;
+   background-color: #eef2f5;
+   padding: 1em 0;
+}
+
+.commentSection .comment {
+   box-shadow: 10px 10px 5px #aaaaaa;
+   background-color: #fff;
+   margin: 2em auto;
+   padding: 1.5em;
+   width: 80%;
+}
+
+.commentSection .author {
+   color: #ff0000;
+   font-weight: 700;
+}
+
+.commentSection .date {
+   font-weight: 100;
+   font-size: 12px;
+   opacity: 0.7;
 }

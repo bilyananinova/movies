@@ -59,3 +59,18 @@ input[type="submit"]:hover {
     border-color: var(--btn-border-color-hover);
     color: var(--btn-font-color-hover);
 }
+
+.commentForm {
+    margin: 3em auto;
+    display: flex;
+    width: 60em;
+}
+
+.commentForm input,
+.commentForm label {
+    align-self: start;
+}
+
+.commentForm input[type="submit"] {
+    margin-left: 0;
+}
