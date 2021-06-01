@@ -1,5 +1,5 @@
 .my-page {
-    margin: 2em;
+    margin: 2em 0;
 }
 
 .my-page section {
@@ -15,4 +15,5 @@
     box-shadow: 10px 10px 5px #aaaaaa;
     padding: 0.5em 0.3em;
     font-weight: 500;
+    margin: 0 1em;
 }
