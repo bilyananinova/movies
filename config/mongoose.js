@@ -1,6 +1,5 @@
 let mongoose = require('mongoose');
 let config = require('../config/config');
-console.log(config.DB_CONNECTION);
 
 function setUp() {
     mongoose.connect(config.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
