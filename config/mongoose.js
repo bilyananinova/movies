@@ -1,9 +1,11 @@
 let mongoose = require('mongoose');
+let config = require('../config/config');
+console.log(config.DB_CONNECTION);
 
 function setUp() {
-    mongoose.connect('mongodb://localhost:27017/movies', { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(config.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
     let db = mongoose.connection;
-    db.on('error', () => {
+    db.on('error', (error) => {
         console.error(error)
     });
     db.once('open', () => {
