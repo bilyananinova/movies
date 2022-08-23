@@ -74,3 +74,23 @@ input[type="submit"]:hover {
 .commentForm input[type="submit"] {
     margin-left: 0;
 }
+
+@media (max-width: 600px) {
+    textarea,
+    .addMovie input[type="text"],
+    .addMovie {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    textarea,
+    .addMovie input[type="text"],
+    .addMovie {
+        width: 90%;
+        margin: auto;
+    }
+    
+}

@@ -49,3 +49,71 @@
     font-weight: none;
     background: none;
 }
+
+.menu {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.menu-button {
+    display: none;
+}
+
+.menu:checked + .site-header {
+    display: block;
+} 
+
+@media (max-width: 600px) {
+
+    header {
+        display: block;
+    }
+    
+    .site-header {
+        z-index: 100;
+    }
+
+    .menu-button {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-family: var(--btn-font-family);
+        color: var(--btn-font-color);
+        background: black;
+    }
+
+    .menu-button .close {
+        display: none;
+        flex-basis: 4%;
+    }
+
+    .navigation {
+        display: none;
+        margin-left: auto;
+    }
+    
+    .navigation ul {
+        display: block;
+    }
+
+   .navigation ul li {
+        padding: 0.3em 0;
+    }
+
+    .menu:checked + .site-header nav {
+        display: block;
+    } 
+
+    .menu:checked + .site-header .home {
+        display: none;
+    } 
+
+    .menu:checked + .site-header .close {
+        display: none;
+    }
+
+    .menu + .site-header {
+        display: block;
+    }
+}
