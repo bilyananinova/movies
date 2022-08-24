@@ -1,4 +1,4 @@
-live demo: https://express-app-movies.herokuapp.com/my-page
+live demo: https://express-app-movies.herokuapp.com
 
 ## Installation
 
