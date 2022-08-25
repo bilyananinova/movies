@@ -1,3 +1,5 @@
+live demo: https://express-app-movies.herokuapp.com
+
 ## Installation
 
 1. Clone the repo
